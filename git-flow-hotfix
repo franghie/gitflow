@@ -152,8 +152,8 @@ require_no_existing_hotfix_branches() {
 	local hotfix_branches=$(echo "$(git_local_branches)" | grep "^$PREFIX")
 	local first_branch=$(echo ${hotfix_branches} | head -n1)
 	first_branch=${first_branch#$PREFIX}
-	[ -z "$hotfix_branches" ] || \
-		die "There is an existing hotfix branch ($first_branch). Finish that one first."
+	# [ -z "$hotfix_branches" ] || \
+    #	die "There is an existing hotfix branch ($first_branch). Finish that one first."
 }
 
 cmd_start() {
